@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import {CATEGORY, SUBCATEGORY} from '../Api/Api';
 import Product from '../Components/Product';
+import HomeLoader from '../Loader/HomeLoader';
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -26,7 +27,7 @@ const Home = () => {
           setSelectedItem(res.Result.Category[1].Id);
           fetchSubcategories(res.Result.Category[1]);
           setLoading(true);
-          setLoadingStart(false)
+          setLoadingStart(false);
         }
       }
     });
@@ -131,14 +132,7 @@ const Home = () => {
 
             <>
               {loading ? (
-                <View
-                  style={{
-                    flex: 1,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}>
-                  <ActivityIndicator size="large" color="#0000ff" />
-                </View>
+               <HomeLoader></HomeLoader>
               ) : (
                 <ScrollView>
                   <FlatList
