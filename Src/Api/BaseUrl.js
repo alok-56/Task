@@ -1,0 +1,1 @@
+export const BaseUrl='http://esptiles.imperoserver.in/api/API'
