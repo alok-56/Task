@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, Image, ScrollView, Text, View} from 'react-native';
+import {FlatList, Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 
 const Product = ({data}) => {
   return (
@@ -32,6 +32,19 @@ const Product = ({data}) => {
                   }}>
                   {item.Name}
                 </Text>
+                <TouchableOpacity style={{
+                    position: 'absolute',
+                    top:10,
+                    left:10,
+                    backgroundColor:"aqua",
+                    padding:5,
+                    borderRadius:5
+                }}>
+                    <Text style={{
+                        fontSize:16,
+                        fontWeight:"600"
+                    }}>{item.PriceCode}</Text>
+                </TouchableOpacity>
               </View>
             );
           }}></FlatList>
