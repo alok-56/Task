@@ -140,7 +140,9 @@ const Home = () => {
                     data={subcategories}
                     keyExtractor={item => item.Id.toString()}
                     renderItem={({item}) => (
-                      <TouchableOpacity
+                        <>
+                        
+                        <TouchableOpacity
                         style={{
                           backgroundColor:
                             selectedItem === item.Id ? '#ccc' : 'transparent',
@@ -156,8 +158,11 @@ const Home = () => {
                           }}>
                           {item.Name}
                         </Text>
-                        <Product data={item}></Product>
+                       
                       </TouchableOpacity>
+                        <Product data={item}></Product>
+                        </>
+                      
                     )}
                   />
                 </ScrollView>
